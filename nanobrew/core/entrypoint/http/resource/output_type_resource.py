@@ -1,10 +1,9 @@
-
 from aiohttp import web
 
 from ....application import CommandBus, QueryBus
-from ....application.query.fetch_sensor_types import FetchSensorTypes
+from ....application.query.fetch_output_types import FetchOutputTypes
 
-class SensorTypeResource:
+class OutputTypeResource:
     _commands: CommandBus
     _queries: QueryBus
 
@@ -13,13 +12,13 @@ class SensorTypeResource:
         self._queries = queries
 
     async def handle_get(self, request):
-        sensor_types = await self._queries.run_query(FetchSensorTypes())
+        output_types = await self._queries.run_query(FetchOutputTypes())
 
-        return web.json_response(sensor_types)
+        return web.json_response(output_types)
 
     def attach(self, app: web.Application):
         app.add_routes([
-            web.get('/sensor_types', self.handle_get)
+            web.get('/output_types', self.handle_get)
         ])
 
         return app

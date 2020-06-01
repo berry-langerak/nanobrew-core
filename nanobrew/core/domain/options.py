@@ -1,7 +1,8 @@
 from .option import Option
-from .option_type.text import Text
-from .option_type.enum import Enum
 from .option_type.decimal import Decimal
+from .option_type.enum import Enum
+from .option_type.numeric import Numeric
+from .option_type.text import Text
 
 
 class Options:
@@ -16,6 +17,7 @@ class Options:
             'decimal': Decimal,
             'enum': Enum,
             'text': Text,
+            'numeric': Numeric,
         }
 
         options = {}

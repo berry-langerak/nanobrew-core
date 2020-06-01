@@ -1,1 +1,2 @@
 plugin.sensor_dummy
+plugin.output_dummy

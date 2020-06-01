@@ -12,6 +12,7 @@ from ...application.event_bus import EventBus
 from ...application.query_bus import QueryBus
 from .resource.sensor_resource import SensorResource
 from .resource.sensor_type_resource import SensorTypeResource
+from .resource.output_type_resource import OutputTypeResource
 from .resource.websocket_resource import WebsocketResource
 
 
@@ -59,6 +60,7 @@ class Server:
         resources = [
             SensorResource(commands, queries),
             SensorTypeResource(commands, queries),
+            OutputTypeResource(commands, queries),
             WebsocketResource(commands, queries, events)
         ]
 

@@ -23,7 +23,7 @@ class SensorType:
     def get_name(self):
         return self._name
 
-    async def to_dict(self):
+    def to_dict(self):
         return {
             'name': self._name,
             'options': self._options.to_dict(),

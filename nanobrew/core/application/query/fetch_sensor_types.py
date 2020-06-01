@@ -20,4 +20,4 @@ class FetchSensorTypes(BaseQuery):
             sensor_types = await self._sensor_types.fetch_all()
             mapper = SensorTypeMapper()
 
-            return {key: await mapper.sensor_type_to_dict(sensor_type) for key, sensor_type in sensor_types.items()}
+            return {key: mapper.sensor_type_to_dict(sensor_type) for key, sensor_type in sensor_types.items()}

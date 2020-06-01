@@ -1,1 +1,2 @@
 from .register_sensor_type import RegisterSensorType
+from .register_output_type import RegisterOutputType
