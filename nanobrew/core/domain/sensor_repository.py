@@ -1,7 +1,4 @@
-import uuid
-
 from .sensor_data_mapper import SensorDataMapper
-from .sensor_list import SensorList
 
 
 class SensorRepository:

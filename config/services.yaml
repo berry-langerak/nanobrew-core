@@ -23,6 +23,19 @@ services:
         class: OutputTypeRepository
         module: nanobrew.core.domain.output_type_repository
 
+    actors:
+        class: ActorRepository
+        module: nanobrew.core.domain.actor_repository
+        dependencies:
+            - actors_sqlite
+
+    actors_sqlite:
+        class: SqliteActorDataMapper
+        module: nanobrew.core.infrastructure.sqlite.actor_data_mapper
+        dependencies:
+            - sqlite_connection
+            - output_types
+
     event_listener:
         class: EventListener
         module: nanobrew.core.application.event_listener

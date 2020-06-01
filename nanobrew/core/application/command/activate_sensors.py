@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 import logging
 
@@ -19,7 +18,7 @@ class ActivateSensors(BaseCommand):
 
     class Handler:
         _sensors: SensorRepository
-        
+
         def __init__(self, sensors: SensorRepository, listener: EventListener):
             self._sensors = sensors
             self._listener = listener

@@ -10,6 +10,7 @@ from ...application.command_bus import CommandBus
 from ...application.config import Config
 from ...application.event_bus import EventBus
 from ...application.query_bus import QueryBus
+from .resource.actor_resource import ActorResource
 from .resource.sensor_resource import SensorResource
 from .resource.sensor_type_resource import SensorTypeResource
 from .resource.output_type_resource import OutputTypeResource
@@ -58,6 +59,7 @@ class Server:
 
     def _configure(self, app: web.Application, commands, queries, events):
         resources = [
+            ActorResource(commands, queries),
             SensorResource(commands, queries),
             SensorTypeResource(commands, queries),
             OutputTypeResource(commands, queries),

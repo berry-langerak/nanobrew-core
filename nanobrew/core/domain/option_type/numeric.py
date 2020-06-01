@@ -24,7 +24,7 @@ class Numeric(Option):
             errors.append('Value can not be empty')
 
         if (value is not None) and (not str(value).isnumeric()):
-            errors.append('Value is not a valid decimal value')
+            errors.append('Value is not a valid numeric value')
 
         return len(errors) == 0, errors
 
